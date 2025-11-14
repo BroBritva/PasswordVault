@@ -1,0 +1,54 @@
+﻿# 🔧 Сборка .NET
+bin/
+obj/
+*.user
+*.suo
+*.cache
+*.log
+*.vspscc
+*.vssscc
+
+# 🧪 Отладка
+*.pdb
+*.dbmdl
+*.bak
+
+# 🔐 Хранилище паролей
+vault.dat
+vault.bin
+salt.dat
+salt.bin
+
+# 📦 Конфигурация среды
+*.runtimeconfig.json
+*.deps.json
+
+# 🖼️ Ресурсы
+*.ico
+*.png
+*.jpg
+
+# 📚 Документация
+README.md
+
+# 💻 Visual Studio
+.vs/
+*.csproj.user
+*.psess
+*.vsp
+*.sln.docstates
+
+# 📁 Системные файлы
+Thumbs.db
+Desktop.ini
+
+# 🧪 Тесты и временные файлы
+TestResults/
+*.tmp
+*.temp
+*.log
+
+# 📦 NuGet
+*.nupkg
+*.snupkg
+packages/

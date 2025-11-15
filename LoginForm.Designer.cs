@@ -58,7 +58,7 @@
             btnLogin.TabIndex = 1;
             btnLogin.Text = "Войти";
             btnLogin.UseVisualStyleBackColor = true;
-            btnLogin.Click += btnLogin_Click;
+            btnLogin.Click += BtnLogin_Click;
             // 
             // btnExit
             // 
@@ -70,7 +70,7 @@
             btnExit.TabIndex = 2;
             btnExit.Text = "Выход";
             btnExit.UseVisualStyleBackColor = true;
-            btnExit.Click += btnExit_Click;
+            btnExit.Click += BtnExit_Click;
             // 
             // lab
             // 
@@ -84,7 +84,7 @@
             btnChangePassword.TabIndex = 4;
             btnChangePassword.Text = "сменить пароль";
             btnChangePassword.UseVisualStyleBackColor = false;
-            btnChangePassword.Click += btnChangePassword_Click;
+            btnChangePassword.Click += BtnChangePassword_Click;
             // 
             // btnFullReset
             // 
@@ -95,7 +95,7 @@
             btnFullReset.TabIndex = 5;
             btnFullReset.Text = "full reset";
             btnFullReset.UseVisualStyleBackColor = false;
-            btnFullReset.Click += btnFullReset_Click;
+            btnFullReset.Click += BtnFullReset_Click;
             // 
             // LoginForm
             // 

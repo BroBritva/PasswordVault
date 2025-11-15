@@ -2,8 +2,8 @@
 {
     public partial class MainForm : Form
     {
-        private VaultManager vault;
-        private List<PasswordEntry> entries;
+        private readonly VaultManager vault;
+        private readonly List<PasswordEntry> entries;
         
 
         public MainForm(byte[] key)
@@ -42,7 +42,7 @@
 
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void BtnSave_Click(object sender, EventArgs e)
         {
             vault.Save(entries);
             MessageBox.Show("Данные сохранены!");

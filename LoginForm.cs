@@ -3,10 +3,12 @@ namespace PasswordVault
 {
     public partial class LoginForm : Form
     {
-        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-        private static extern IntPtr CreateRoundRectRgn(
+        [LibraryImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static partial IntPtr CreateRoundRectRgn(
         int nLeftRect, int nTopRect, int nRightRect, int nBottomRect,
         int nWidthEllipse, int nHeightEllipse);
+
+
         private int attempts = 0;
         private const int maxAttempts = 3;
         public byte[]? Key { get; private set; }
@@ -16,6 +18,7 @@ namespace PasswordVault
             InitializeComponent();
             ShowInTaskbar = true;
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
 
             using (var ms = new MemoryStream(Properties.Resources.apps))
             {
@@ -41,12 +44,12 @@ namespace PasswordVault
             };
             Controls.Add(helpIcon);
 
-            ToolTip tooltip = new ToolTip();
+            ToolTip tooltip = new();
             tooltip.SetToolTip(helpIcon, "Первый введённый пароль станет основным для входа.");
             tooltip.BackColor = Color.Aqua;
             Controls.Add(helpIcon);
         }
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void BtnLogin_Click(object sender, EventArgs e)
         {
             string password = txtPassword.Text;
             if (string.IsNullOrWhiteSpace(password))
@@ -81,17 +84,15 @@ namespace PasswordVault
 
 
 
-        private void btnExit_Click(object sender, EventArgs e)
+        private void BtnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-        private void btnChangePassword_Click(object sender, EventArgs e)
+        private void BtnChangePassword_Click(object sender, EventArgs e)
         {
-            using (var changeForm = new ChangePasswordForm())
-            {
-                changeForm.StartPosition = FormStartPosition.CenterParent;
-                changeForm.ShowDialog();
-            }
+            using var changeForm = new ChangePasswordForm();
+            changeForm.StartPosition = FormStartPosition.CenterParent;
+            changeForm.ShowDialog();
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
@@ -101,12 +102,12 @@ namespace PasswordVault
 
         }
 
-        private void toolTip1_Popup(object sender, PopupEventArgs e)
+        private void ToolTip1_Popup(object sender, PopupEventArgs e)
         {
 
         }
 
-        private void btnFullReset_Click(object sender, EventArgs e)
+        private void BtnFullReset_Click(object sender, EventArgs e)
         {
             var confirm = MessageBox.Show(
         "Это удалит все сохранённые пароли, ключи и временные файлы.\nВы уверены?",

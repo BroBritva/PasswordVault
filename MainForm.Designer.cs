@@ -91,7 +91,7 @@ namespace PasswordVault
             btnSave.Size = new Size(90, 30);
             btnSave.TabIndex = 0;
             btnSave.Text = "Сохранить";
-            btnSave.Click += btnSave_Click;
+            btnSave.Click += BtnSave_Click;
 
             // === btnExit ===
             btnExit.Anchor = AnchorStyles.Right;

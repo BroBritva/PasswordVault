@@ -2,9 +2,9 @@
 {
     public class PasswordEntry
     {
-        public string Site { get; set; }
+        public string Site { get; set; } = string.Empty;
         public string Login { get; set; } = string.Empty;
-        public string Password { get; set; }
-        public string RecoveryFilePath { get; set; }
+        public string Password { get; set; } = string.Empty;
+        public string RecoveryFilePath { get; set; } = string.Empty;
     }
 }

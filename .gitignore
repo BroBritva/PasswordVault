@@ -52,3 +52,5 @@ TestResults/
 *.nupkg
 *.snupkg
 packages/
+# Лог обновления Visual Studio
+UpgradeLog.htm

@@ -9,7 +9,7 @@
         public MainForm(byte[] key)
         {
             InitializeComponent();
-            using (var ms = new MemoryStream(Properties.Resources.app))
+            using (var ms = new MemoryStream(Properties.Resources.apps))
             {
                 this.Icon = new Icon(ms);
             }

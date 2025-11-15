@@ -17,7 +17,7 @@ namespace PasswordVault
             ShowInTaskbar = true;
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
 
-            using (var ms = new MemoryStream(Properties.Resources.app))
+            using (var ms = new MemoryStream(Properties.Resources.apps))
             {
                 this.Icon = new Icon(ms);
             }
@@ -28,7 +28,7 @@ namespace PasswordVault
 
             txtPassword.UseSystemPasswordChar = true;
             // Подсказка
-            PictureBox helpIcon = new PictureBox
+            PictureBox helpIcon = new()
             {
                 Image = SystemIcons.Question.ToBitmap(), // стандартная иконка вопроса
                 SizeMode = PictureBoxSizeMode.StretchImage,
@@ -121,12 +121,12 @@ namespace PasswordVault
             {
                 string appPath = Application.StartupPath;
 
-                string[] targets = {
+                string[] targets = [
             Path.Combine(appPath, "vault.dat"),
             Path.Combine(appPath, "vault.bin"),
             Path.Combine(appPath, "salt.dat"),
             Path.Combine(appPath, "salt.bin")
-        };
+        ];
 
                 foreach (var file in targets)
                 {

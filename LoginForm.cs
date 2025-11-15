@@ -43,6 +43,12 @@ namespace PasswordVault
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string password = txtPassword.Text;
+            if (string.IsNullOrWhiteSpace(password))
+            {
+                MessageBox.Show("Логин не может быть пустым.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             byte[] salt = CryptoHelper.GetOrCreateSalt();
             byte[] key = CryptoHelper.GenerateKey(password, salt);
 

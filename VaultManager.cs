@@ -24,7 +24,7 @@ namespace PasswordVault
                 return new List<PasswordEntry>();
 
             string json = CryptoHelper.DecryptFile(filePath, key);
-            return JsonSerializer.Deserialize<List<PasswordEntry>>(json);
+            return JsonSerializer.Deserialize<List<PasswordEntry>>(json) ?? new List<PasswordEntry>();
         }
     }
 }

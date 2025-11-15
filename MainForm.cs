@@ -29,6 +29,7 @@
         private void MainForm_FormClosing(object? sender, FormClosingEventArgs e)
         {
             // Диалог подтверждения выхода
+            vault.Save(entries);
             var result = MessageBox.Show("Вы действительно хотите закрыть приложение?",
                                          "Подтверждение выхода",
                                          MessageBoxButtons.YesNo,

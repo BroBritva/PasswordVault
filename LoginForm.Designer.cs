@@ -54,7 +54,7 @@
             btnLogin.AutoSize = true;
             btnLogin.Location = new Point(119, 146);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(147, 40);
+            btnLogin.Size = new Size(140, 35);
             btnLogin.TabIndex = 1;
             btnLogin.Text = "Войти";
             btnLogin.UseVisualStyleBackColor = true;
@@ -66,21 +66,19 @@
             btnExit.AutoSize = true;
             btnExit.Location = new Point(119, 217);
             btnExit.Name = "btnExit";
-            btnExit.Size = new Size(147, 37);
+            btnExit.Size = new Size(140, 35);
             btnExit.TabIndex = 2;
             btnExit.Text = "Выход";
             btnExit.UseVisualStyleBackColor = true;
             btnExit.Click += BtnExit_Click;
-            // 
-            // lab
-            // 
+           
             // 
             // btnChangePassword
             // 
             btnChangePassword.BackColor = SystemColors.Highlight;
             btnChangePassword.Location = new Point(26, 10);
             btnChangePassword.Name = "btnChangePassword";
-            btnChangePassword.Size = new Size(107, 23);
+            btnChangePassword.Size = new Size(140, 35);
             btnChangePassword.TabIndex = 4;
             btnChangePassword.Text = "сменить пароль";
             btnChangePassword.UseVisualStyleBackColor = false;
@@ -91,7 +89,7 @@
             btnFullReset.BackColor = Color.Red;
             btnFullReset.Location = new Point(281, 12);
             btnFullReset.Name = "btnFullReset";
-            btnFullReset.Size = new Size(75, 23);
+            btnFullReset.Size = new Size(80, 35);
             btnFullReset.TabIndex = 5;
             btnFullReset.Text = "full reset";
             btnFullReset.UseVisualStyleBackColor = false;

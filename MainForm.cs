@@ -1,4 +1,6 @@
-﻿namespace PasswordVault
+﻿using PasswordVault.Helpers;
+
+namespace PasswordVault
 {
     public partial class MainForm : Form
     {
@@ -9,6 +11,7 @@
         public MainForm(byte[] key)
         {
             InitializeComponent();
+           
             using (var ms = new MemoryStream(Properties.Resources.apps))
             {
                 this.Icon = new Icon(ms);

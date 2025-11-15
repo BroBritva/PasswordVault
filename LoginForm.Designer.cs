@@ -3,8 +3,7 @@
     partial class LoginForm
     {
         /// <summary>
-        /// Required designer variable.
-        /// </summary>
+       
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
@@ -32,7 +31,6 @@
             txtPassword = new TextBox();
             btnLogin = new Button();
             btnExit = new Button();
-            lab = new Label();
             btnChangePassword = new Button();
             btnFullReset = new Button();
             SuspendLayout();
@@ -45,6 +43,7 @@
             txtPassword.Location = new Point(26, 100);
             txtPassword.Name = "txtPassword";
             txtPassword.PlaceholderText = "введите пароль";
+            txtPassword.PasswordChar = '●';
             txtPassword.RightToLeft = RightToLeft.No;
             txtPassword.Size = new Size(308, 23);
             txtPassword.TabIndex = 0;
@@ -75,13 +74,6 @@
             // 
             // lab
             // 
-            lab.AutoSize = true;
-            lab.BackColor = SystemColors.InactiveCaption;
-            lab.Location = new Point(26, 69);
-            lab.Name = "lab";
-            lab.Size = new Size(107, 15);
-            lab.TabIndex = 3;
-            lab.Text = "ВВЕДИТЕ ПАРОЛЬ";
             // 
             // btnChangePassword
             // 
@@ -113,7 +105,6 @@
             ClientSize = new Size(368, 298);
             Controls.Add(btnFullReset);
             Controls.Add(btnChangePassword);
-            Controls.Add(lab);
             Controls.Add(btnExit);
             Controls.Add(btnLogin);
             Controls.Add(txtPassword);
@@ -131,7 +122,7 @@
         private TextBox txtPassword;
         private Button btnLogin;
         private Button btnExit;
-        private Label lab;
+        
         private Button btnChangePassword;
         private Button btnFullReset;
     }

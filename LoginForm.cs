@@ -25,16 +25,22 @@ namespace PasswordVault
             this.AcceptButton = btnLogin;
 
             // Скрываем ввод пароля
+
             txtPassword.UseSystemPasswordChar = true;
             // Подсказка
             PictureBox helpIcon = new PictureBox
             {
                 Image = SystemIcons.Question.ToBitmap(), // стандартная иконка вопроса
                 SizeMode = PictureBoxSizeMode.StretchImage,
-                Size = new Size(16, 16),
-                Location = new Point(lab.Right + 10, lab.Top + 0), // рядом с полем пароля
-                Cursor = Cursors.Hand
+                Size = new Size(25, 25),
+                Cursor = Cursors.Hand,
+                Location = new Point(
+         txtPassword.Left + (txtPassword.Width - 25) / 2, // центр по горизонтали
+         txtPassword.Top - 30 // над полем, на 30 пикселей выше
+     )
             };
+            Controls.Add(helpIcon);
+
             ToolTip tooltip = new ToolTip();
             tooltip.SetToolTip(helpIcon, "Первый введённый пароль станет основным для входа.");
             tooltip.BackColor = Color.Aqua;
@@ -90,6 +96,8 @@ namespace PasswordVault
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
+            ActiveControl = btnLogin;
+
 
         }
 
